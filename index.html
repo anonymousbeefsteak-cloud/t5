@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 
+      Content Security Policy (CSP)
+      - default-src 'self': Restricts all resources to be loaded from the same origin.
+      - script-src 'self' ... 'sha256-...': Allows scripts from self, CDNs, and a specific inline script via its hash.
+      - style-src 'self' 'unsafe-inline' ...: Allows styles from self, inline styles (for toast notifications), and Google Fonts.
+      - font-src 'self' ...: Allows fonts from self and Google Fonts.
+      - img-src 'self' ...: Allows images from self, picsum.photos, and data URIs.
+      - connect-src 'self' ...: Allows connections to self, the Google Apps Script backend, and the Google AI API.
+    -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.tailwindcss.com https://aistudiocdn.com 'sha256-4L3zVlB9iU4Qc5QRj3y44OCgH4QLsWfptbHHRpGZk/4='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' https://picsum.photos data:; connect-src 'self' https://script.google.com https://generativelanguage.googleapis.com;">
+    <title>Steakhouse Supreme Delivery</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'serif': ['Playfair Display', 'serif'],
+              'sans': ['Roboto', 'sans-serif'],
+            },
+            colors: {
+              'brand-gold': '#c09a59',
+              'brand-dark': '#1a1a1a',
+              'brand-light': '#f5f5f5',
+              'brand-gray': '#333333',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai-sdk@^0.16.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-brand-dark text-brand-light font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
